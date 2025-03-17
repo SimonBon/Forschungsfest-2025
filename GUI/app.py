@@ -43,9 +43,13 @@ WIDTH, HEIGHT = 1920, 1056 #get_monitors()[0].width, get_monitors()[0].height
 
 print(WIDTH, HEIGHT, int(0.8*(2*WIDTH//3)))
 
-H5_PATH = '/home/simon_g/isilon_images_mnt/10_MetaSystems/MetaSystemsData/_simon/data/DiagnosticFISH/test_dataset.h5'
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    '-h5','--h5_file', type=str)
+args = parser.parse_args()
 
-
+H5_PATH = args.h5_file
 
 def resize_with_scipy(image, target_height, target_width):
     """Resize an image using scipy to a target height and width."""
