@@ -37,8 +37,10 @@ bold_font.setBold(True)  # Make text bold
 
 from src import randomly_place_cells, load_model
 
-import pyautogui
-WIDTH, HEIGHT = pyautogui.size()
+from screeninfo import get_monitors
+print(get_monitors())
+WIDTH, HEIGHT = 1920, 1056 #get_monitors()[0].width, get_monitors()[0].height
+
 print(WIDTH, HEIGHT, int(0.8*(2*WIDTH//3)))
 
 H5_PATH = '/home/simon_g/isilon_images_mnt/10_MetaSystems/MetaSystemsData/_simon/data/DiagnosticFISH/test_dataset.h5'
