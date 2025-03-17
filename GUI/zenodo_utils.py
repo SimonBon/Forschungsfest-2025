@@ -49,10 +49,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         '-o','--out_path', type=str)
+    
     args = parser.parse_args()
     
-    record_id = "15038540"  # Replace with your Zenodo record ID
-    filename = "test_dataset.h5"  # Replace with the exact filename you wish to download
-    destination = Path(args.out_path) / 'test_dataset.h5'  # Replace with your desired save path
-
-    download_zenodo_file(record_id, filename, destination)
+    record_id = "15040443"  # Replace with your Zenodo record ID
+    filename = ['config', "test_dataset.h5"]  # Replace with the exact filename you wish to download
+    for file in filename:
+        destination = Path(args.out_path) / file  # Replace with your desired save path
+        download_zenodo_file(record_id, filename, destination)
