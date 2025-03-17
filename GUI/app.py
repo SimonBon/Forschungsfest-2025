@@ -131,9 +131,10 @@ class MainWindow(QMainWindow):
             PackSelfSupInputs(meta_keys=[])
         ]
         
-        model, _, _ = get_model_dataloader(
+        model = get_model_dataloader(
             BASEDIR.joinpath('data/config'),
             device='cpu',
+            only_model=True
         )
         
         classifier = load_model(BASEDIR.joinpath('data/classifier.pth'))        
@@ -159,7 +160,7 @@ class MainWindow(QMainWindow):
                 sampler=DefaultSampler(self.dataset, shuffle=False), 
                 batch_size=64, 
                 collate_fn=default_collate,
-                num_workers=16
+                num_workers=None
             )
         
         self.run_model()
