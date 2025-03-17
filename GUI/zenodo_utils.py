@@ -44,6 +44,22 @@ def download_zenodo_file(record_id, filename, destination, access_token=None):
 
     print(f"\nFile '{filename}' has been downloaded to '{destination}'.")
     
+import zipfile
+
+def unzip_file(zip_path, extract_to):
+    """
+    Unzips a .zip file to the specified directory.
+
+    :param zip_path: Path to the .zip file.
+    :param extract_to: Directory where files should be extracted.
+    """
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
+        zip_ref.extractall(extract_to)
+    print(f"Extracted '{zip_path}' to '{extract_to}'")
+
+# Example usage
+
+    
 if __name__ == '__main__':
     
     parser = argparse.ArgumentParser()
@@ -52,8 +68,10 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     
-    record_id = "15040443"  # Replace with your Zenodo record ID
-    filename = ['config.zip', "test_dataset.h5"]  # Replace with the exact filename you wish to download
-    for file in filename:
-        destination = Path(args.out_path) / file  # Replace with your desired save path
-        download_zenodo_file(record_id, file, destination)
+    record_id = "15040813"  # Replace with your Zenodo record ID
+    filename = 'data.zip'  # Replace with the exact filename you wish to download
+    
+    destination = Path(args.out_path) / filename  # Replace with your desired save path
+    download_zenodo_file(record_id, filename, destination)
+    
+    unzip_file(destination, Path(args.out_path))
