@@ -279,7 +279,7 @@ class MainWindow(QMainWindow):
         else:
             x = y = 512
             
-        image, mask_image, idxs, positions, target = self.generate_image((x, y), self.cells, self.masks, self.targets, 250, 20)
+        image, mask_image, idxs, positions, target = self.generate_image((x, y), self.cells, self.masks, self.targets, 250, 100)
         
         self.ratio = int(0.8*(2*WIDTH//3))/x
         
