@@ -158,7 +158,7 @@ class MainWindow(QMainWindow):
         self.dataloader = DataLoader(
                 dataset=self.dataset, 
                 sampler=DefaultSampler(self.dataset, shuffle=False), 
-                batch_size=64, 
+                batch_size=16, 
                 collate_fn=default_collate,
                 num_workers=0
             )
