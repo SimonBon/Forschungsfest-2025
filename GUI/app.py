@@ -31,6 +31,9 @@ from DiagnosticFISH_package.DiagnosticFISH.src.transforms import CentralCutter, 
 
 from PyQt5.QtGui import QFont
 
+from pathlib import Path
+BASEDIR = Path(__file__).parent.parent
+
 # Define a font (Font Name, Font Size)
 bold_font = QFont("Arial", 20)
 bold_font.setBold(True)  # Make text bold
@@ -38,18 +41,13 @@ bold_font.setBold(True)  # Make text bold
 from src import randomly_place_cells, load_model
 
 from screeninfo import get_monitors
-print(get_monitors())
 WIDTH, HEIGHT = 1920, 1056 #get_monitors()[0].width, get_monitors()[0].height
 
 print(WIDTH, HEIGHT, int(0.8*(2*WIDTH//3)))
 
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument(
-    '-h5','--h5_file', type=str)
-args = parser.parse_args()
+H5_PATH = BASEDIR.joinpath('data/dataset.h5')
 
-H5_PATH = args.h5_file
+print(H5_PATH)
 
 def resize_with_scipy(image, target_height, target_width):
     """Resize an image using scipy to a target height and width."""
@@ -134,11 +132,11 @@ class MainWindow(QMainWindow):
         ]
         
         model, _, _ = get_model_dataloader(
-            "/home/simon_g/isilon_images_mnt/10_MetaSystems/MetaSystemsData/_simon/src/mmselfsup_package/tools/work_dirs/home/config", 
+            BASEDIR.joinpath('data/config'),
             device='cpu',
         )
         
-        classifier = load_model("/home/simon_g/isilon_images_mnt/10_MetaSystems/MetaSystemsData/_simon/src/Forschungsfest/classifier.pth")        
+        classifier = load_model(BASEDIR.joinpath('data/classifier.pth'))        
 
         model.eval()
         classifier.eval()
