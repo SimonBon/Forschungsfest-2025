@@ -160,7 +160,7 @@ class MainWindow(QMainWindow):
                 sampler=DefaultSampler(self.dataset, shuffle=False), 
                 batch_size=64, 
                 collate_fn=default_collate,
-                num_workers=None
+                num_workers=0
             )
         
         self.run_model()
