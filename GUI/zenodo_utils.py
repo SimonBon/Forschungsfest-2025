@@ -56,4 +56,4 @@ if __name__ == '__main__':
     filename = ['config', "test_dataset.h5"]  # Replace with the exact filename you wish to download
     for file in filename:
         destination = Path(args.out_path) / file  # Replace with your desired save path
-        download_zenodo_file(record_id, filename, destination)
+        download_zenodo_file(record_id, file, destination)
