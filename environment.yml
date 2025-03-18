@@ -5,9 +5,10 @@ channels:
   - defaults
 dependencies:
   - python=3.9
-  - numpy
+
   - pip
   - pip:
+      - numpy=1.26.4
       - torch==1.9.0
       - torchvision==0.10.0
       - mmcv==2.0.1
