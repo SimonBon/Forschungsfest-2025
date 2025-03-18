@@ -22,12 +22,12 @@ from PyQt5.uic import loadUi  # Import to load .ui files
 from PyQt5.QtWidgets import QApplication
 import sys
 
-from DiagnosticFISH.DiagnosticFISH.src.utils import get_model_dataloader, run_model
-from DiagnosticFISH.DiagnosticFISH.src.dataset import SingleChannelDataset
+from DiagnosticFISH_package.DiagnosticFISH.src.utils import get_model_dataloader, run_model
+from DiagnosticFISH_package.DiagnosticFISH.src.dataset import SingleChannelDataset
 from mmengine.dataset import DefaultSampler, default_collate
 from torch.utils.data import DataLoader
 from mmselfsup.datasets.transforms import PackSelfSupInputs
-from DiagnosticFISH.DiagnosticFISH.src.transforms import CentralCutter, C_TensorCombiner
+from DiagnosticFISH_package.DiagnosticFISH.src.transforms import CentralCutter, C_TensorCombiner
 
 from PyQt5.QtGui import QFont
 
