@@ -41,13 +41,9 @@ bold_font.setBold(True)  # Make text bold
 from src import randomly_place_cells, load_model
 
 from screeninfo import get_monitors
-WIDTH, HEIGHT = 1920, 1056 #get_monitors()[0].width, get_monitors()[0].height
-
-print(WIDTH, HEIGHT, int(0.8*(2*WIDTH//3)))
+WIDTH, HEIGHT = min(get_monitors()[0].width, 1920), min(get_monitors()[0].height, 1056)
 
 H5_PATH = BASEDIR.joinpath('data/dataset.h5')
-
-print(H5_PATH)
 
 def resize_with_scipy(image, target_height, target_width):
     """Resize an image using scipy to a target height and width."""
