@@ -69,6 +69,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     out_path = Path(args.out_path).resolve()
+    print(out_path)
     
     record_id = "15040813"  # Replace with your Zenodo record ID
     filename = 'data.zip'  # Replace with the exact filename you wish to download
