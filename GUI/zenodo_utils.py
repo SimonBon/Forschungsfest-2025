@@ -68,10 +68,23 @@ if __name__ == '__main__':
     
     args = parser.parse_args()
     
+    out_path = Path(args.out_path)
+    
     record_id = "15040813"  # Replace with your Zenodo record ID
     filename = 'data.zip'  # Replace with the exact filename you wish to download
     
-    destination = Path(args.out_path) / filename  # Replace with your desired save path
+    destination = out_path / filename  # Replace with your desired save path
     download_zenodo_file(record_id, filename, destination)
     
-    unzip_file(destination, Path(args.out_path))
+    unzip_file(destination, out_path)
+    
+    print(out_path.joinpath('data/config/last_checkpoint'))
+    print(f'{out_path}/data/config/checkpoint.pth')
+    
+    with open(out_path.joinpath('data/config/last_checkpoint'), "w") as file:
+        file.write(f'{out_path}/data/config/checkpoint.pth')
+        
+    
+        
+    
+    
