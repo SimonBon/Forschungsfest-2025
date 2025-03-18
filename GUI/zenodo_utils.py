@@ -2,6 +2,7 @@ import requests
 from tqdm import tqdm
 import argparse
 from pathlib import Path
+import os
 
 def download_zenodo_file(record_id, filename, destination, access_token=None):
     """
@@ -56,8 +57,21 @@ def unzip_file(zip_path, extract_to):
     with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(extract_to)
     print(f"Extracted '{zip_path}' to '{extract_to}'")
+    
 
-# Example usage
+def add_to_pythonpath():
+    shell_rc_file = Path.home() / (".zshrc" if os.environ.get("SHELL", "").endswith("zsh") else ".bashrc")
+    line_to_add = 'export PYTHONPATH="$PYTHONPATH:$HOME/src"'
+
+    # Check if the line already exists
+    if not shell_rc_file.exists() or line_to_add not in shell_rc_file.read_text():
+        with open(shell_rc_file, "a") as rc_file:
+            rc_file.write(f"\n{line_to_add}\n")
+        print(f"✅ Added {line_to_add} to {shell_rc_file}")
+
+    # Source the updated file
+    os.system(f"source {shell_rc_file}")
+    print(f"✅ Sourced {shell_rc_file}")
 
     
 if __name__ == '__main__':
@@ -84,6 +98,7 @@ if __name__ == '__main__':
     with open(out_path.joinpath('data/config/last_checkpoint'), "w") as file:
         file.write(f'{out_path}/data/config/checkpoint.pth')
         
+    add_to_pythonpath()
     
         
     

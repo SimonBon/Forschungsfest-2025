@@ -5,7 +5,6 @@ channels:
   - defaults
 dependencies:
   - python=3.9
-
   - pip
   - pip:
       - numpy==1.26.4
@@ -19,3 +18,4 @@ dependencies:
       - pandas
       - h5py
       - screeninfo
+      - requests
