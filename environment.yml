@@ -1,4 +1,4 @@
- name: FF
+name: FF
 channels:
   - conda-forge
   - bioconda
