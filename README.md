@@ -70,6 +70,6 @@ The AI model operates in **two key stages**:
 📢 **Feedback & Contributions**  
 If you encounter any issues or have suggestions, feel free to open an **issue** or contribute to the repository.  
 
-🔗 **Contact:** [Simon Gutwein](simon.gutwein@ccri.at)  
+🔗 **Contact:** [Simon Gutwein](mailto:simon.gutwein@ccri.at)
 
 🚀 **Enjoy exploring AI-powered diagnostics!**  
