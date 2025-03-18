@@ -26,18 +26,20 @@ It features an **interactive game** that simulates the process of detecting **ge
    ```
 
 3. **Navigate to the `Forschungsfest-2025` folder, create a Conda environment, and activate it:**
+   If you do not have conda installes, please refer to the anaconda webpage to install it.
+   
    ```bash
    cd Forschungsfest-2025
    conda env create -f environment.yml
    conda activate FF
    ```
 
-4. **Download the necessary files to run the model and display microscopic images:**
+5. **Download the necessary files to run the model and display microscopic images:**
    ```bash
    python GUI/zenodo_utils.py -o .
    ```
 
-5. **Start the application:**
+6. **Start the application:**
    ```bash
    python GUI/app.py
    ```
