@@ -20,27 +20,27 @@ It features an **interactive game** that simulates the process of detecting **ge
    ```
 
 2. **Clone the required repositories:**
-   '''
+   ```bash
    git clone https://github.com/SimonBon/Forschungsfest-2025
    git clone https://github.com/SimonBon/DiagnosticFISH_package
-   '''
+   ```
 
 3. **Navigate to the `Forschungsfest-2025` folder, create a Conda environment, and activate it:**
-   '''
+   ```bash
    cd Forschungsfest-2025
    conda env create -f environment.yml
    conda activate FF
-   '''
+   ```
 
 4. **Download the necessary files to run the model and display microscopic images:**
-   '''
+   ```bash
    python GUI/zenodo_utils.py -o .
-   '''
+   ```
 
 5. **Start the application:**
-   '''
+   ```bash
    python GUI/app.py
-   '''
+   ```
 
 🎉 **You're all set! Enjoy the game!**
 
