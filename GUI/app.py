@@ -142,7 +142,7 @@ class MainWindow(QMainWindow):
     
     def generate_image(self, out_size, images, masks, targets, n_images, max_rejections):
     
-        image, mask_image, idxs, positions, target = randomly_place_cells(out_size, images, masks, targets, n_images, max_rejections=50)
+        image, mask_image, idxs, positions, target = randomly_place_cells(out_size, images, masks, targets, n_images, max_rejections=max_rejections)
         
         self.dataset = SingleChannelDataset(
                 H5_PATH,
@@ -275,7 +275,7 @@ class MainWindow(QMainWindow):
         else:
             x = y = 512
             
-        image, mask_image, idxs, positions, target = self.generate_image((x, y), self.cells, self.masks, self.targets, 250, 100)
+        image, mask_image, idxs, positions, target = self.generate_image((x, y), self.cells, self.masks, self.targets, 1000, 250)
         
         self.ratio = int(0.8*(2*WIDTH//3))/x
         
