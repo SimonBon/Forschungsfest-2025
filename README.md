@@ -26,7 +26,7 @@ It features an **interactive game** that simulates the process of detecting **ge
    ```
 
 3. **Navigate to the `Forschungsfest-2025` folder, create a Conda environment, and activate it:**
-   If you do not have conda installes, please refer to the anaconda webpage to install it.
+   If you do not have conda installed, please refer to the anaconda webpage to install it.
    
    ```bash
    cd Forschungsfest-2025
