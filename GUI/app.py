@@ -225,6 +225,7 @@ class MainWindow(QMainWindow):
         self.start.setMinimumSize(120, 80)  # Set minimum width and height
         self.stop = self.create_button("Suche beenden...", 300, 400, 120, Qt.AlignHCenter)
         self.stop.setMinimumSize(120, 80)  # Set minimum width and height
+        self.stop.setFont(bold_font)
         startStopLayout.addWidget(self.start)
         startStopLayout.addWidget(self.stop)
         
