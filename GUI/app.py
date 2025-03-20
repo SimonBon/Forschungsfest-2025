@@ -221,8 +221,8 @@ class MainWindow(QMainWindow):
 
         # ⬇️ HBox for Start and Stop Buttons
         startStopLayout = QHBoxLayout()
-        self.start = self.create_button("Suche beginnen...", 200, 250, 50, Qt.AlignHCenter)
-        self.stop = self.create_button("Suche beenden...", 200, 250, 50, Qt.AlignHCenter)
+        self.start = self.create_button("Suche beginnen...", 200, 400, 50, Qt.AlignHCenter)
+        self.stop = self.create_button("Suche beenden...", 200, 400, 50, Qt.AlignHCenter)
         startStopLayout.addWidget(self.start)
         startStopLayout.addWidget(self.stop)
         
