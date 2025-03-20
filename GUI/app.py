@@ -17,7 +17,7 @@ from scipy.spatial.distance import cdist
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import Qt, QRect, pyqtSignal, QPoint
 from PyQt5.QtGui import QPixmap, QPainter, QPen, QColor, QFont, QImage
-from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QLineEdit, QTableWidget, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QMainWindow, QSpacerItem, QSizePolicy, QWidget, QLabel, QVBoxLayout, QHBoxLayout, QPushButton, QLineEdit, QTableWidget, QTableWidgetItem
 from PyQt5.uic import loadUi  # Import to load .ui files
 from PyQt5.QtWidgets import QApplication
 import sys
@@ -234,6 +234,8 @@ class MainWindow(QMainWindow):
         
         # 🔹 HBox for Summary Row (Initial Values)
         self.SummaryLayout = QVBoxLayout()
+        self.SummaryLayout.setSpacing(2)  # Reduce spacing between labels (adjust as needed)
+        self.SummaryLayout.setContentsMargins(0, 0, 0, 0)  # Minimize margins
 
         self.user_time_label = QLabel("Deine Zeit: 0s", self.rightContainer)
         self.user_time_label.setFont(bold_font)
@@ -249,6 +251,8 @@ class MainWindow(QMainWindow):
         self.SummaryLayout.addWidget(self.user_annot_label, alignment=Qt.AlignHCenter)
         self.SummaryLayout.addWidget(self.model_time_label, alignment=Qt.AlignHCenter)
         self.SummaryLayout.addWidget(self.model_annot_label, alignment=Qt.AlignHCenter)
+
+        self.SummaryLayout.addItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
         rightVerticalLayout.addLayout(self.SummaryLayout)  # ✅ Add Summary Row
 
