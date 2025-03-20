@@ -205,23 +205,23 @@ class MainWindow(QMainWindow):
         self.image_size = QLineEdit(self)
         self.image_size.setMinimumSize(200, 50)
         self.image_size.setMaximumSize(250, 50)
-        self.image_size.setPlaceholderText("Enter Image Size...")  # Hint text
+        self.image_size.setPlaceholderText("Bildgröße eingeben...")  # Hint text
         imageInputLayout.addWidget(self.image_size)
 
-        self.new_image_button = self.create_button("Load Image", 200, 250, 50, Qt.AlignHCenter)
+        self.new_image_button = self.create_button("Mikroskopiebild laden", 200, 250, 50, Qt.AlignHCenter)
         imageInputLayout.addWidget(self.new_image_button)
 
         rightVerticalLayout.addLayout(imageInputLayout)
 
         # ⬇️ HBox for Start and Stop Buttons
         startStopLayout = QHBoxLayout()
-        self.start = self.create_button("Start Analysis...", 200, 250, 50, Qt.AlignHCenter)
-        self.stop = self.create_button("Stop Analysis...", 200, 250, 50, Qt.AlignHCenter)
+        self.start = self.create_button("Suche beginnen...", 200, 250, 50, Qt.AlignHCenter)
+        self.stop = self.create_button("Suche beenden...", 200, 250, 50, Qt.AlignHCenter)
         startStopLayout.addWidget(self.start)
         startStopLayout.addWidget(self.stop)
         
         showResults = QHBoxLayout()
-        self.show_results = self.create_button("Show Model Predictions", 200, 250, 50, Qt.AlignHCenter)
+        self.show_results = self.create_button("Vergleiche mit KI", 200, 250, 50, Qt.AlignHCenter)
         showResults.addWidget(self.show_results)
 
         rightVerticalLayout.addLayout(startStopLayout)
@@ -230,14 +230,14 @@ class MainWindow(QMainWindow):
         # 🔹 HBox for Summary Row (Initial Values)
         self.SummaryLayout = QVBoxLayout()
 
-        self.user_time_label = QLabel("User Time: 0s", self.rightContainer)
+        self.user_time_label = QLabel("Deine Zeit: 0s", self.rightContainer)
         self.user_time_label.setFont(bold_font)
-        self.user_annot_label = QLabel("User: 0 / Correct: 0", self.rightContainer)
+        self.user_annot_label = QLabel("Erkannte Tumorzellen: 0 / Korrekte Anzahl: 0", self.rightContainer)
         self.user_annot_label.setFont(bold_font)
         
-        self.model_time_label = QLabel("Model Time: 0s", self.rightContainer)
+        self.model_time_label = QLabel("Zeit der KI: 0s", self.rightContainer)
         self.model_time_label.setFont(bold_font)
-        self.model_annot_label = QLabel("Model: 0 / Correct: 0", self.rightContainer)
+        self.model_annot_label = QLabel("Erkannte Tumorzellen (KI): 0 / Korrekte Anzahl: 0", self.rightContainer)
         self.model_annot_label.setFont(bold_font)
         
         self.SummaryLayout.addWidget(self.user_time_label, alignment=Qt.AlignHCenter)
@@ -344,11 +344,11 @@ class MainWindow(QMainWindow):
         self.timer = time()
         self.started = True
         
-        self.user_time_label.setText(f"User Time: ---")
-        self.user_annot_label.setText(f"User: --- / Correct: ---")
+        self.user_time_label.setText(f"Deine Zeit: ---")
+        self.user_annot_label.setText(f"Erkannte Tumorzellen: --- / Korrekte Anzahl: ---")
 
-        self.model_time_label.setText(f"Model Time: ---")
-        self.model_annot_label.setText(f"Model: --- / Correct: ---")
+        self.model_time_label.setText(f"Zeit der KI: ---")
+        self.model_annot_label.setText(f"Erkannte Tumorzellen (KI): --- / Korrekte Anzahl: ---")
         # self.user_time_label = QLabel("User Time: 0s", self.rightContainer)
         # self.user_annot_label = QLabel("User: 0 / Correct: 0", self.rightContainer)
         
@@ -370,11 +370,11 @@ class MainWindow(QMainWindow):
         correct_model = np.sum(self.predictions == self.curr_targets) / len(self.curr_targets) # How many were correct
 
         # Update labels with the results
-        self.user_time_label.setText(f"User Time: {self.timer:.2f}s")
-        self.user_annot_label.setText(f"User: {user_annotations} / Correct: {correct_user:.0%}")
+        self.user_time_label.setText(f"Deine Zeit: {self.timer:.2f}s")
+        self.user_annot_label.setText(f"Erkannte Tumorzellen: {user_annotations} / Korrekte Anzahl: {correct_user:.0%}")
 
-        self.model_time_label.setText(f"Model Time: {self.model_timer:.2f}s")
-        self.model_annot_label.setText(f"Model: {model_annotations} / Correct: {correct_model:.0%}")
+        self.model_time_label.setText(f"Zeit der KI: {self.model_timer:.2f}s")
+        self.model_annot_label.setText(f"Erkannte Tumorzellen (KI): {model_annotations} / Korrekte Anzahl: {correct_model:.0%}")
 
         print(f"User Time: {self.timer:.2f}s")
         print(f"User Annotations: {user_annotations}, Correct: {correct_user}")
