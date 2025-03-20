@@ -43,7 +43,7 @@ from src import randomly_place_cells, load_model
 from screeninfo import get_monitors
 
 WIDTH, HEIGHT = get_monitors()[0].width, get_monitors()[0].height
-if (WDITH / HEIGHT) > 16/9:
+if (WIDTH / HEIGHT) > 16/9:
     print('resorting to 1920')
     WIDTH = 1920
     HEIGHT = 1056
