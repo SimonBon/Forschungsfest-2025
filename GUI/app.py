@@ -240,12 +240,12 @@ class MainWindow(QMainWindow):
 
         self.user_time_label = QLabel("Deine Zeit: 0s", self.rightContainer)
         self.user_time_label.setFont(bold_font)
-        self.user_annot_label = QLabel("Erkannte Tumorzellen: 0 / Korrekte Anzahl: 0", self.rightContainer)
+        self.user_annot_label = QLabel("Erkannte Tumorzellen: 0\nKorrekte Anzahl: 0", self.rightContainer)
         self.user_annot_label.setFont(bold_font)
         
         self.model_time_label = QLabel("Zeit der KI: 0s", self.rightContainer)
         self.model_time_label.setFont(bold_font)
-        self.model_annot_label = QLabel("Erkannte Tumorzellen (KI): 0 / Korrekte Anzahl: 0", self.rightContainer)
+        self.model_annot_label = QLabel("Erkannte Tumorzellen (KI): 0\nKorrekte Anzahl: 0", self.rightContainer)
         self.model_annot_label.setFont(bold_font)
         
         self.SummaryLayout.addItem(QSpacerItem(80, 80))
@@ -358,15 +358,15 @@ class MainWindow(QMainWindow):
         self.started = True
         
         self.user_time_label.setText(f"Deine Zeit: ---")
-        self.user_annot_label.setText(f"Erkannte Tumorzellen: --- / Korrekte Anzahl: ---")
+        self.user_annot_label.setText(f"Erkannte Tumorzellen: ---\nKorrekte Anzahl: ---")
 
         self.model_time_label.setText(f"Zeit der KI: ---")
-        self.model_annot_label.setText(f"Erkannte Tumorzellen (KI): --- / Korrekte Anzahl: ---")
+        self.model_annot_label.setText(f"Erkannte Tumorzellen (KI): ---\nKorrekte Anzahl: ---")
         # self.user_time_label = QLabel("User Time: 0s", self.rightContainer)
-        # self.user_annot_label = QLabel("User: 0 / Correct: 0", self.rightContainer)
+        # self.user_annot_label = QLabel("User: 0\nCorrect: 0", self.rightContainer)
         
         # self.model_time_label = QLabel("Model Time: 0s", self.rightContainer)
-        # self.model_annot_label = QLabel("Model: 0 / Correct: 0", self.rightContainer)
+        # self.model_annot_label = QLabel("Model: 0\nCorrect: 0", self.rightContainer)
         
     def stop_timer(self):
         """ Stops the timer and updates the summary row with user and model statistics """
@@ -384,10 +384,10 @@ class MainWindow(QMainWindow):
 
         # Update labels with the results
         self.user_time_label.setText(f"Deine Zeit: {self.timer:.2f}s")
-        self.user_annot_label.setText(f"Erkannte Tumorzellen: {user_annotations} / Korrekte Anzahl: {correct_user:.0%}")
+        self.user_annot_label.setText(f"Erkannte Tumorzellen: {user_annotations}\nKorrekte Anzahl: {correct_user:.0%}")
 
         self.model_time_label.setText(f"Zeit der KI: {self.model_timer:.2f}s")
-        self.model_annot_label.setText(f"Erkannte Tumorzellen (KI): {model_annotations} / Korrekte Anzahl: {correct_model:.0%}")
+        self.model_annot_label.setText(f"Erkannte Tumorzellen (KI): {model_annotations}\nKorrekte Anzahl: {correct_model:.0%}")
 
         print(f"User Time: {self.timer:.2f}s")
         print(f"User Annotations: {user_annotations}, Correct: {correct_user}")
