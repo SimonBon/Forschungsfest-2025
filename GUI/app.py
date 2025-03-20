@@ -211,12 +211,12 @@ class MainWindow(QMainWindow):
         self.image_size.setMinimumSize(200, 50)
         self.image_size.setMaximumSize(250, 50)
         self.image_size.setPlaceholderText("Bildgröße eingeben...")  # Hint text
-        imageInputLayout.addItem(QSpacerItem(80, 80))
         imageInputLayout.addWidget(self.image_size)
 
         self.new_image_button = self.create_button("Mikroskopiebild laden", 200, 250, 50, Qt.AlignHCenter)
         imageInputLayout.addWidget(self.new_image_button)
 
+        rightVerticalLayout.addItem(QSpacerItem(80, 80))
         rightVerticalLayout.addLayout(imageInputLayout)
 
         # ⬇️ HBox for Start and Stop Buttons
