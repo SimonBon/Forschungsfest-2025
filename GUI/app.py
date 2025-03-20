@@ -224,9 +224,11 @@ class MainWindow(QMainWindow):
         self.start = self.create_button("Suche beginnen...", 300, 400, 120, Qt.AlignHCenter)
         self.start.setMinimumSize(120, 80)  # Set minimum width and height
         self.start.setFont(bold_font)
+        self.start.setStyleSheet("background-color: green; color: white; border-radius: 10px; font-weight: bold;")
         self.stop = self.create_button("Suche beenden...", 300, 400, 120, Qt.AlignHCenter)
         self.stop.setMinimumSize(120, 80)  # Set minimum width and height
         self.stop.setFont(bold_font)
+        self.stop.setStyleSheet("background-color: red; color: white; border-radius: 10px; font-weight: bold;")
         startStopLayout.addWidget(self.start)
         startStopLayout.addWidget(self.stop)
         
