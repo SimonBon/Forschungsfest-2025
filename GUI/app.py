@@ -216,7 +216,7 @@ class MainWindow(QMainWindow):
         self.new_image_button = self.create_button("Mikroskopiebild laden", 200, 250, 50, Qt.AlignHCenter)
         imageInputLayout.addWidget(self.new_image_button)
 
-        rightVerticalLayout.addItem(QSpacerItem(0, 400))
+        rightVerticalLayout.addItem(QSpacerItem(0, 300))
         rightVerticalLayout.addLayout(imageInputLayout)
 
         # ⬇️ HBox for Start and Stop Buttons
