@@ -247,14 +247,15 @@ class MainWindow(QMainWindow):
         self.model_annot_label = QLabel("Erkannte Tumorzellen (KI): 0 / Korrekte Anzahl: 0", self.rightContainer)
         self.model_annot_label.setFont(bold_font)
         
-        self.SummaryLayout.addItem(QSpacerItem(20, 40))
-
+        self.SummaryLayout.addItem(QSpacerItem(80, 80))
         self.SummaryLayout.addWidget(self.user_time_label, alignment=Qt.AlignLeft)
         self.SummaryLayout.addWidget(self.user_annot_label, alignment=Qt.AlignLeft)
+        
+        self.SummaryLayout.addItem(QSpacerItem(80, 80))
         self.SummaryLayout.addWidget(self.model_time_label, alignment=Qt.AlignLeft)
         self.SummaryLayout.addWidget(self.model_annot_label, alignment=Qt.AlignLeft)
 
-        self.SummaryLayout.addItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
+        self.SummaryLayout.addItem(QSpacerItem(80, 80, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
         rightVerticalLayout.addLayout(self.SummaryLayout)  # ✅ Add Summary Row
 
