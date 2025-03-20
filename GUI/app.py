@@ -234,7 +234,7 @@ class MainWindow(QMainWindow):
         
         # 🔹 HBox for Summary Row (Initial Values)
         self.SummaryLayout = QVBoxLayout()
-        self.SummaryLayout.setSpacing(2)  # Reduce spacing between labels (adjust as needed)
+        self.SummaryLayout.setSpacing(10)  # Reduce spacing between labels (adjust as needed)
         self.SummaryLayout.setContentsMargins(0, 0, 0, 0)  # Minimize margins
 
         self.user_time_label = QLabel("Deine Zeit: 0s", self.rightContainer)
@@ -247,6 +247,8 @@ class MainWindow(QMainWindow):
         self.model_annot_label = QLabel("Erkannte Tumorzellen (KI): 0 / Korrekte Anzahl: 0", self.rightContainer)
         self.model_annot_label.setFont(bold_font)
         
+        self.SummaryLayout.addItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
+
         self.SummaryLayout.addWidget(self.user_time_label, alignment=Qt.AlignHCenter)
         self.SummaryLayout.addWidget(self.user_annot_label, alignment=Qt.AlignHCenter)
         self.SummaryLayout.addWidget(self.model_time_label, alignment=Qt.AlignHCenter)
