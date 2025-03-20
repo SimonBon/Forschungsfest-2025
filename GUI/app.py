@@ -249,10 +249,10 @@ class MainWindow(QMainWindow):
         
         self.SummaryLayout.addItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
-        self.SummaryLayout.addWidget(self.user_time_label, alignment=Qt.AlignHCenter)
-        self.SummaryLayout.addWidget(self.user_annot_label, alignment=Qt.AlignHCenter)
-        self.SummaryLayout.addWidget(self.model_time_label, alignment=Qt.AlignHCenter)
-        self.SummaryLayout.addWidget(self.model_annot_label, alignment=Qt.AlignHCenter)
+        self.SummaryLayout.addWidget(self.user_time_label, alignment=Qt.AlignHLeft)
+        self.SummaryLayout.addWidget(self.user_annot_label, alignment=Qt.AlignHLeft)
+        self.SummaryLayout.addWidget(self.model_time_label, alignment=Qt.AlignHLeft)
+        self.SummaryLayout.addWidget(self.model_annot_label, alignment=Qt.AlignHLeft)
 
         self.SummaryLayout.addItem(QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding))
 
