@@ -35,7 +35,7 @@ from pathlib import Path
 BASEDIR = Path(__file__).parent.parent
 
 # Define a font (Font Name, Font Size)
-bold_font = QFont("Arial", 20)
+bold_font = QFont("Arial", 30)
 bold_font.setBold(True)  # Make text bold
 
 from src import randomly_place_cells, load_model
