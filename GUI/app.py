@@ -222,12 +222,15 @@ class MainWindow(QMainWindow):
         # ⬇️ HBox for Start and Stop Buttons
         startStopLayout = QHBoxLayout()
         self.start = self.create_button("Suche beginnen...", 300, 400, 120, Qt.AlignHCenter)
+        self.start.setMinimumSize(120, 80)  # Set minimum width and height
         self.stop = self.create_button("Suche beenden...", 300, 400, 120, Qt.AlignHCenter)
+        self.stop.setMinimumSize(120, 80)  # Set minimum width and height
         startStopLayout.addWidget(self.start)
         startStopLayout.addWidget(self.stop)
         
         showResults = QHBoxLayout()
         self.show_results = self.create_button("Vergleiche mit KI", 200, 250, 50, Qt.AlignHCenter)
+        self.show_results.setMinimumSize(120, 80)  # Set minimum width and height
         showResults.addWidget(self.show_results)
 
         rightVerticalLayout.addLayout(startStopLayout)
