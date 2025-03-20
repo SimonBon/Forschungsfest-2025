@@ -223,6 +223,7 @@ class MainWindow(QMainWindow):
         startStopLayout = QHBoxLayout()
         self.start = self.create_button("Suche beginnen...", 300, 400, 120, Qt.AlignHCenter)
         self.start.setMinimumSize(120, 80)  # Set minimum width and height
+        self.start.setFont(bold_font)
         self.stop = self.create_button("Suche beenden...", 300, 400, 120, Qt.AlignHCenter)
         self.stop.setMinimumSize(120, 80)  # Set minimum width and height
         self.stop.setFont(bold_font)
