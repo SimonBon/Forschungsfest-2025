@@ -41,7 +41,12 @@ bold_font.setBold(True)  # Make text bold
 from src import randomly_place_cells, load_model
 
 from screeninfo import get_monitors
-WIDTH, HEIGHT = min(get_monitors()[0].width, 1920), min(get_monitors()[0].height, 1056)
+
+WIDTH, HEIGHT = get_monitors()[0].width, get_monitors()[0].height
+if (WDITH / HEIGHT) > 16/9:
+    print('resorting to 1920')
+    WIDTH = 1920
+    HEIGHT = 1056
 
 H5_PATH = BASEDIR.joinpath('data/dataset.h5')
 
